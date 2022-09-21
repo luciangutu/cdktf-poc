@@ -33,4 +33,5 @@ WORKDIR ${PROJECT_NAME}
 RUN pip3 install -r requirements.txt
 RUN cdktf get
 RUN cdktf synth
-RUN cdktf deploy
+RUN cdktf deploy --auto-approve
+RUN cdktf destroy --auto-approve
