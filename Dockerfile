@@ -1,4 +1,4 @@
-FROM node
+FROM node:18.9
 
 ARG TERRAFORM_VERSION=1.1.3
 ARG PROJECT_NAME="cdktf-aws-demo"
@@ -26,7 +26,7 @@ RUN apt-get install -y python3-pip && \
 ################################
 # Install CDK
 ################################
-RUN npm install --global cdktf-cli@latest
+RUN npm install --global cdktf-cli@0.12.3
 
 ADD ${PROJECT_NAME}/ ${PROJECT_NAME}
 WORKDIR ${PROJECT_NAME}
